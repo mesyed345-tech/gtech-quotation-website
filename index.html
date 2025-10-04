@@ -5,13 +5,39 @@
   <title>Quotation</title>
   <style>
     body { font-family: Arial, sans-serif; margin:40px; }
-    .header { display:flex; justify-content:space-between; align-items:flex-start; }
-    .logo img { width:120px; }
-    .company-info { font-size:14px; margin-top:5px; }
+    
+    /* Header Layout */
+    .header { 
+      display:flex; 
+      justify-content:space-between; 
+      align-items:flex-start; 
+    }
+
+    /* Logo Styling */
+    .logo img { 
+      width:120px; 
+      height:auto; 
+      display:block;
+    }
+
+    .company-info { 
+      font-size:14px; 
+      margin-top:5px; 
+      text-align:right;
+    }
+
+    h1 {
+      text-align: center;
+      margin-bottom: 10px;
+      color: #0f4c81;
+    }
+
     .center { text-align: center; font-size:22px; font-weight:bold; margin:20px 0; }
+
     table { width:100%; border-collapse: collapse; margin-top:20px; }
     th, td { border:1px solid #000; padding:8px; text-align:center; vertical-align:top; }
     th { background:#f2f2f2; }
+
     input, textarea { 
       width: 100%; 
       border: none; 
@@ -29,7 +55,16 @@
 
     .no-border { border:none !important; }
     .right { text-align:right; }
-    #downloadBtn { margin-top:20px; padding:8px 16px; background:#0f4c81; color:#fff; border:none; cursor:pointer; border-radius:5px; }
+
+    #downloadBtn { 
+      margin-top:20px; 
+      padding:8px 16px; 
+      background:#0f4c81; 
+      color:#fff; 
+      border:none; 
+      cursor:pointer; 
+      border-radius:5px; 
+    }
 
     /* Signature section */
     .signature {
@@ -51,26 +86,34 @@
   </style>
 </head>
 <body>
-<h1>G-Tech Solar</h1>
+
   <div class="header">
-      <div class="company-info">
-        <div><input type="text" value="123 Solar Street, Lahore, Pakistan"></div>
-        <div><input type="text" value="+92 300 1234567"></div>
-        <div><input type="text" value="solar@gtech.com"></div>
-      </div>
+    <!-- ✅ Logo added here -->
+    <div class="logo">
+      <img src="data:image/jpeg;base64,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" alt="G-Tech Logo">
     </div>
-    <div>
-      <table>
-        <tr>
-          <td class="no-border right">Date:</td>
-          <td><input type="text" id="date" value="01-10-2025"></td>
-        </tr>
-        <tr>
-          <td class="no-border right">To:</td>
-          <td><input type="text" id="client" value="Client Name"></td>
-        </tr>
-      </table>
+
+    <div class="company-info">
+      <div><input type="text" value="123 Solar Street, Lahore, Pakistan"></div>
+      <div><input type="text" value="+92 300 1234567"></div>
+      <div><input type="text" value="solar@gtech.com"></div>
     </div>
+  </div>
+
+  <h1>G-Tech Solar Gujrat</h1>
+
+  <div>
+    <table>
+      <tr>
+        <td class="no-border right">Date:</td>
+        <td><input type="text" id="date" value="01-10-2025"></td>
+      </tr>
+      <tr>
+        <td class="no-border right">To:</td>
+        <td><input type="text" id="client" value="Client Name"></td>
+      </tr>
+    </table>
+  </div>
 
   <div class="center">QUOTATION</div>
 
@@ -114,8 +157,7 @@
 
   <!-- Signature Section -->
   <div class="signature">
-   <img src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wgARCABQAIADASIAAhEBAxEB/8QAGgABAAIDAQAAAAAAAAAAAAAAAAIFAQMEBv/EABQBAQAAAAAAAAAAAAAAAAAAAAD/2gAMAwEAAhADEAAAAvVAAAAECYAAAABEkxkVFt5QvayFwR7+HuAAANdB6KrOKy06CPJ6jQV9hjqAAAAAK/VLkLfXDuAAAAAAI1tlkyAAAD//2gAMAwEAAgADAAAAIQAAAAAAAAAACCJAAAAILACAAAAAIIAAAAAAEAAAAP/aAAwDAQACAAMAAAAQ8888480888804w8888IUY888888Mk888888Ic888/8QAFBEBAAAAAAAAAAAAAAAAAAAAUP/aAAgBAgEBPwAj/8QAFBEBAAAAAAAAAAAAAAAAAAAAUP/aAAgBAwEBPwAj/8QALRAAAQMCBAUDAwUAAAAAAAAAAgEDBAARBRITIRQwMTJBIlFhI0ChECQzctH/2gAIAQEAAT8C+5FwCJREkUh6p9hKb4LEOMD+M/S5/tYu8beHGbBWLwtOy8SCOTBsKZqOzgVgzZNQxRxwjc6rm8clTFOpIlXT9XdVxwnScVQecVrJWGxZUkWgceRY7Rbp5qc+Qjox93y6fFYXB4Nssxqbp7kvIfLIyZJ4SgZA8McnP3cdXfcqwdoJeRxt11ow7m71JxWPFlaDyqK2veoIzpGpIYkegi9Imm1qcizIryG83qMoWdBb96gmcaIg5f3Lq5svtUSPpXI1zOl3FyVS6WXpR4Kyq7OOC3e+S+1YgzwhBLjpbJsae6Vh7QYjKfluhdpfSKLQAICgglhTxUyRpIggmZ0u0aiRtK5uLmeLqvMxslSCQj1NctYF9EHIhdzS/ipT6MNZl3XwnvUNhUu89u8X45uPXSIJp0A0VaizGSxR59svpaaXX5qM2T7nEPp/QfbnOZci57ZfN6jMBId1EbQGB7Ut3fPPMBMVE0uK0KIKIgpZE5P/xAAiEAEAAgEFAAIDAQAAAAAAAAABABEhMDFBUWEQQHGRwbH/2gAIAQEAAT8h+ztvQHJ9Cj4EeotSNH5vjR7yxxhVr60WaY9YJsj8LQy/24tg4YpBtnI4mJY6PXtmQSW3d0F3s7FpGaIB5LJMtbj+511C4mEVOQUXdmzEi+6x7csp7pk/w0ScLWEi4a2HPFqoQsRRHreDmExxAThk/wDSVdwn8zzUaujfvLu+B6omyOD3Uf7J89GrXTYPqWCB6XSY7u3j3+dbw74S5SsdLdtcmuIjBaYAGj//xAAlEAEAAQQBAwQDAQAAAAAAAAABEQAhMVEwQWFxEJGhsUCB0fD/2gAIAQEAAT8Q/Jf1kTHlPURLPKISY1c3H9US2Pd8rRUB6VvdMvesrZkhwux5QKJEx6j6AjRNSck1aYO4xUXd4ZdnsxR4NIPwQVJrkLeDtwRUJMdhQU+8A2wBtQgelOl4NEM0r2aDey3jsmqS0Tmxbm8U1Vzd/wCkLe1G9L/wEBwjvKoMjW35JxMRqgojHx2nyUKXUsmgDzIWAKufqB9tBXWFLMfQOSCoc6FDUkDfk2Bo81HWDgKT8LOnR8XLM4xYlC3adHGgYDo74o6xxGNtG3NjCCYMO9Xng2Y/BqgAgxzEwCGslHQKGgA4f//+AAMA/9k=" alt="Sign Image" width="200" height="100">
-
+   <img src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wgARCABQAIADASIAAhEBAxEB/8QAGgABAAIDAQAAAAAAAAAAAAAAAAIFAQMEBv/EABQBAQAAAAAAAAAAAAAAAAAAAAD/2gAMAwEAAhADEAAAAvVAAAAECYAAAABEkxkVFt5QvayFwR7+HuAAANdB6KrOKy06CPJ6jQV9hjqAAAAAK/VLkLfXDuAAAAAAI1tlkyAAAD//2gAMAwEAAgADAAAAIQAAAAAAAAAACCJAAAAILACAAAAAIIAAAAAAEAAAAP/aAAwDAQACAAMAAAAQ8888480888804w8888IUY888888Mk888888Ic888/8QAFBEBAAAAAAAAAAAAAAAAAAAAUP/aAAgBAgEBPwAj/8QAFBEBAAAAAAAAAAAAAAAAAAAAUP/aAAgBAwEBPwAj/8QALRAAAQMCBAUDAwUAAAAAAAAAAgEDBAARBRITIRQwMTJBIlFhI0ChECQzctH/2gAIAQEAAT8C+5FwCJREkUh6p9hKb4LEOMD+M/S5/tYu8beHGbBWLwtOy8SCOTBsKZqOzgVgzZNQxRxwjc6rm8clTFOpIlXT9XdVxwnScVQecVrJWGxZUkWgceRY7Rbp5qc+Qjox93y6fFYXB4Nssxqbp7kvIfLIyZJ4SgZA8McnP3cdXfcqwdoJeRxt11ow7m71JxWPFlaDyqK2veoIzpGpIYkegi9Imm1qcizIryG83qMoWdBb96gmcaIg5f3Lq5svtUSPpXI1zOl3FyVS6WXpR4Kyq7OOC3e+S+1YgzwhBLjpbJsae6Vh7QYjKfluhdpfSKLQAICgglhTxUyRpIggmZ0u0aiRtK5uLmeLqvMxslSCQj1NctYF9EHIhdzS/ipT6MNZl3XwnvUNhUu89u8X45uPXSIJp0A0VaizGSxR59svpaaXX5qM2T7nEPp/QfbnOZci57ZfN6jMBId1EbQGB7Ut3fPPMBMVE0uK0KIKIgpZE5P/xAAiEAEAAgEFAAIDAQAAAAAAAAABABEhMDFBUWEQQHGRwbH/2gAIAQEAAT8h+ztvQHJ9Cj4EeotSNH5vjR7yxxhVr60WaY9YJsj8LQy/24tg4YpBtnI4mJY6PXtmQSW3d0F3s7FpGaIB5LJMtbj+511C4mEVOQUXdmzEi+6x7csp7pk/w0ScLWEi4a2HPFqoQsRRHreDmExxAThk/wDSVdwn8zzUaujfvLu+B6omyOD3Uf7J89GrXTYPqWCB6XSY7u3j3+dbw74S5SsdLdtcmuIjBaYAGj//xAAlEAEAAQQBAwQDAQAAAAAAAAABEQAhMVEwQWFxEJGhsUCB0fD/2gAIAQEAAT8Q/Jf1kTHlPURLPKISY1c3H9US2Pd8rRUB6VvdMvesrZkhwux5QKJEx6j6AjRNSck1aYO4xUXd4ZdnsxR4NIPwQVJrkLeDtwRUJMdhQU+8A2wBtQgelOl4NEM0r2aDey3jsmqS0Tmxbm8U1Vzd/wCkLe1G9L/wEBwjvKoMjW35JxMRqgojHx2nyUKXUsmgDzIWAKufqB9tBXWFLMfQOSCoc6FDUkDfk2Bo81HWDgKT8LOnR8XLM4xYlC3adHGgYDo74o6xxGNtG3NjCCYMO9Xng2Y/BqgAgxzEwCGslHQKGgA4f//+AAMA/9k=" alt="Sign Image">
     <div class="name">Guddu Shah</div>
     <div class="label">Signature</div>
   </div>
@@ -123,6 +165,7 @@
   <!-- Libraries -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+
   <script>
     function autoResizeTextarea(el) {
       el.style.height = "auto";
@@ -187,4 +230,3 @@
 
 </body>
 </html>
-.
